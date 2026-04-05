@@ -1,0 +1,249 @@
+<!--
+  Project:     cs.ertugrulerendurak.com — Creative Studio Portfolio
+  Author:      Ertugrul Eren Durak
+  Website:     https://www.ertugrulerendurak.com/
+  Repository:  https://github.com/artthurul/cs-ertugrulerendurak
+  Description: Landing page and portfolio showcase for the Creative Studio
+               automated cinematic website production pipeline.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creative Studio — Ertugrul Eren Durak</title>
+<meta name="description" content="Automated cinematic website production pipeline. Scroll-animated, film-grain, parallax sites built daily by AI agents.">
+<meta property="og:title" content="Creative Studio — Ertugrul Eren Durak">
+<meta property="og:description" content="Automated cinematic website production. Scroll-animated sites built daily by AI agents.">
+<meta property="og:url" content="https://cs.ertugrulerendurak.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#080808;
+  --bg2:#0D0D0D;
+  --bg3:#111111;
+  --gold:#C9A84C;
+  --gold-dim:rgba(201,168,76,0.3);
+  --text:#F0EDE6;
+  --text2:#8A8880;
+  --text3:#3A3835;
+  --border:rgba(255,255,255,0.06);
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Space Grotesk',sans-serif;overflow-x:hidden;min-height:100vh}
+
+/* Film grain */
+body::before{content:'';position:fixed;inset:0;z-index:1000;pointer-events:none;opacity:0.035;
+background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+background-size:128px 128px}
+
+/* Vignette */
+body::after{content:'';position:fixed;inset:0;z-index:999;pointer-events:none;
+background:radial-gradient(ellipse at center,transparent 40%,rgba(0,0,0,0.7) 100%)}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:28px 60px;transition:background 0.4s,border-color 0.4s;border-bottom:1px solid transparent}
+nav.scrolled{background:rgba(8,8,8,0.92);border-bottom-color:var(--gold-dim);backdrop-filter:blur(12px)}
+.nav-logo{font-size:12px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold)}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--text2);text-decoration:none;transition:color 0.2s}
+.nav-links a:hover{color:var(--text)}
+
+/* Hero */
+.hero{height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 60px 80px;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#08090C 0%,#080808 50%,#0C0A08 100%)}
+.hero-bg::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 70% 40%,rgba(15,20,35,0.8) 0%,transparent 60%)}
+.hero-overline{font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:16px}
+.hero-overline::before{content:'';width:40px;height:1px;background:var(--gold)}
+.hero h1{font-size:clamp(48px,7vw,96px);font-weight:700;line-height:0.92;letter-spacing:-0.02em;max-width:700px;margin-bottom:28px}
+.hero h1 span{color:var(--gold)}
+.hero-sub{font-size:14px;color:var(--text2);max-width:400px;line-height:1.7;margin-bottom:48px}
+.hero-cta{display:flex;gap:24px;align-items:center}
+.btn-primary{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--bg);background:var(--gold);border:none;padding:15px 32px;cursor:pointer;font-family:inherit;font-weight:600;text-decoration:none;transition:opacity 0.2s}
+.btn-primary:hover{opacity:0.85}
+.btn-ghost{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--text2);background:none;border:1px solid rgba(240,237,230,0.15);padding:15px 32px;cursor:pointer;font-family:inherit;text-decoration:none;transition:color 0.2s,border-color 0.2s}
+.btn-ghost:hover{color:var(--text);border-color:rgba(240,237,230,0.3)}
+.scroll-line{position:absolute;bottom:40px;right:60px;display:flex;flex-direction:column;align-items:center;gap:8px}
+.scroll-line span{font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:var(--text3);writing-mode:vertical-rl}
+.scroll-line-bar{width:1px;height:60px;background:linear-gradient(to bottom,var(--gold),transparent);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:0.3}50%{opacity:1}}
+
+/* Stats */
+.stats{padding:80px 60px;border-top:1px solid var(--border);display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
+.stat{background:var(--bg2);padding:40px;text-align:center}
+.stat-val{font-size:48px;font-weight:700;color:var(--gold);letter-spacing:-0.02em;line-height:1;margin-bottom:8px}
+.stat-label{font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--text2)}
+
+/* Projects */
+.projects-section{padding:100px 60px;background:var(--bg)}
+.section-tag{font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.section-tag::before{content:'';width:24px;height:1px;background:var(--gold)}
+.section-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:60px}
+.section-header h2{font-size:clamp(32px,4vw,52px);font-weight:700;line-height:1;letter-spacing:-0.02em}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:2px}
+.project-card{background:var(--bg3);position:relative;overflow:hidden;cursor:pointer;text-decoration:none;display:block}
+.project-card:hover .card-image img{transform:scale(1.04)}
+.card-image{aspect-ratio:16/9;overflow:hidden;background:var(--bg2);position:relative}
+.card-image img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94)}
+.card-category{position:absolute;top:12px;left:12px;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);background:rgba(8,8,8,0.8);padding:4px 10px;backdrop-filter:blur(8px)}
+.card-info{padding:20px 24px 24px}
+.card-title{font-size:18px;font-weight:600;letter-spacing:-0.01em;margin-bottom:6px;color:var(--text)}
+.card-subject{font-size:12px;color:var(--text2);line-height:1.5;margin-bottom:10px}
+.card-meta{font-size:10px;letter-spacing:0.1em;color:var(--text3)}
+
+/* Empty state */
+.empty-state{text-align:center;padding:80px 40px;color:var(--text2)}
+.empty-state h3{font-size:20px;font-weight:500;margin-bottom:12px;color:var(--text)}
+.empty-state p{font-size:13px;line-height:1.7;max-width:360px;margin:0 auto}
+
+/* About */
+.about{padding:100px 60px;background:var(--bg2);border-top:1px solid var(--border)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-top:60px}
+.about-text p{font-size:14px;color:var(--text2);line-height:1.8;margin-bottom:20px}
+.pipeline-steps{display:flex;flex-direction:column;gap:1px;background:var(--border)}
+.pipeline-step{background:var(--bg3);padding:16px 20px;display:flex;gap:14px;align-items:flex-start}
+.step-num{font-size:10px;letter-spacing:0.15em;color:var(--gold);min-width:28px;margin-top:2px}
+.step-text{font-size:12px;color:var(--text2);line-height:1.5}
+.step-text strong{color:var(--text);font-weight:500}
+
+footer{padding:40px 60px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+footer .logo{font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold)}
+footer p{font-size:11px;color:var(--text3)}
+footer a{color:var(--text3);text-decoration:none;border-bottom:1px solid currentColor;transition:color 0.2s}
+footer a:hover{color:var(--text2)}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.8s ease,transform 0.8s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:0.1s}
+.reveal-delay-2{transition-delay:0.2s}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-logo">Ertugrul Eren Durak</div>
+  <ul class="nav-links">
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="https://www.ertugrulerendurak.com">Main site</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overline">Creative Studio — Automated production pipeline</div>
+  <h1 class="reveal">Cinematic<br>sites, built<br><span>daily.</span></h1>
+  <p class="hero-sub reveal reveal-delay-1">19 AI agents. One pipeline. A new scroll-animated cinematic website every day — deployed automatically at noon.</p>
+  <div class="hero-cta reveal reveal-delay-2">
+    <a href="#projects" class="btn-primary">View projects</a>
+    <a href="https://www.ertugrulerendurak.com" class="btn-ghost">About me</a>
+  </div>
+  <div class="scroll-line">
+    <div class="scroll-line-bar"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stat reveal">
+    <div class="stat-val" id="total-count">0</div>
+    <div class="stat-label">Sites built</div>
+  </div>
+  <div class="stat reveal reveal-delay-1">
+    <div class="stat-val">19</div>
+    <div class="stat-label">AI agents</div>
+  </div>
+  <div class="stat reveal reveal-delay-2">
+    <div class="stat-val">Daily</div>
+    <div class="stat-label">Build cadence</div>
+  </div>
+</div>
+
+<section class="projects-section" id="projects">
+  <div class="section-tag">Portfolio</div>
+  <div class="section-header">
+    <h2 class="reveal">All productions.</h2>
+    <a href="#about" class="btn-ghost reveal" style="font-size:11px">How it works</a>
+  </div>
+  <div class="projects-grid" id="projects-grid">
+    <div class="empty-state">
+      <h3>First build coming soon.</h3>
+      <p>The pipeline is being configured. The first cinematic site will appear here automatically after the first automated build.</p>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="section-tag">The pipeline</div>
+  <div class="about-grid">
+    <div class="about-text">
+      <h2 class="reveal" style="font-size:clamp(28px,3vw,44px);font-weight:700;letter-spacing:-0.02em;line-height:1;margin-bottom:32px">19 agents.<br>One perfect<br><span style="color:var(--gold)">site daily.</span></h2>
+      <p class="reveal">Every day at noon, a research agent finds what the world is paying attention to. A planner decides the visual identity. A naming agent invents the brand. A visual director writes Higgsfield AI prompts for the hero video.</p>
+      <p class="reveal reveal-delay-1">A frontend builder produces the complete scroll-animated site. A security auditor checks every file. A signature agent marks every output. Then it deploys — automatically, without a single human touching the keyboard.</p>
+      <p class="reveal reveal-delay-2" style="color:var(--gold);font-size:13px">Built by <a href="https://www.ertugrulerendurak.com" style="color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold-dim)">Ertugrul Eren Durak</a></p>
+    </div>
+    <div class="pipeline-steps reveal">
+      <div class="pipeline-step"><span class="step-num">01</span><div class="step-text"><strong>Research</strong> — finds today's trending topic across defence, aviation, luxury, travel</div></div>
+      <div class="pipeline-step"><span class="step-num">02</span><div class="step-text"><strong>Planning</strong> — palette, typography, copy voice, page architecture decided</div></div>
+      <div class="pipeline-step"><span class="step-num">03</span><div class="step-text"><strong>Image generation</strong> — Higgsfield AI creates start and end frames at 2K</div></div>
+      <div class="pipeline-step"><span class="step-num">04</span><div class="step-text"><strong>Video generation</strong> — frames converted to cinematic hero video with motion presets</div></div>
+      <div class="pipeline-step"><span class="step-num">05</span><div class="step-text"><strong>Build</strong> — complete index.html with 6 cinematic effects, real copy, no frameworks</div></div>
+      <div class="pipeline-step"><span class="step-num">06</span><div class="step-text"><strong>Security audit</strong> — every file checked before any push to GitHub</div></div>
+      <div class="pipeline-step"><span class="step-num">07</span><div class="step-text"><strong>Deploy</strong> — pushed to GitHub, Vercel auto-deploys, live within 60 seconds</div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="logo">Creative Studio</div>
+  <p>Built by <a href="https://www.ertugrulerendurak.com">Ertugrul Eren Durak</a> — automated production pipeline</p>
+</footer>
+
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 60));
+
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// Load projects from feed.json
+async function loadProjects() {
+  try {
+    const res = await fetch('/projects/feed.json');
+    if (!res.ok) return;
+    const projects = await res.json();
+    if (!projects.length) return;
+
+    document.getElementById('total-count').textContent = projects.length;
+
+    const grid = document.getElementById('projects-grid');
+    grid.innerHTML = projects.map(p => `
+      <a href="/projects/${p.slug}/" class="project-card">
+        <div class="card-image">
+          <img src="/projects/${p.slug}/assets/hero-start.png"
+               alt="${p.brand_name} — ${p.subject}"
+               loading="lazy"
+               onerror="this.style.display='none'">
+          <span class="card-category">${p.category}</span>
+        </div>
+        <div class="card-info">
+          <div class="card-title">${p.brand_name}</div>
+          <div class="card-subject">${p.subject}</div>
+          <div class="card-meta">${p.built_date} · Cinematic scroll site</div>
+        </div>
+      </a>
+    `).join('');
+
+    document.querySelectorAll('.project-card').forEach(el => obs.observe(el));
+  } catch(e) {
+    // feed.json doesn't exist yet — empty state stays
+  }
+}
+
+loadProjects();
+</script>
+</body>
+</html>
