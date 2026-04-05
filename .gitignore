@@ -137,3 +137,24 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor
+.vscode/
+.idea/
+
+# Build artefacts
+*.tmp
+*.temp
+
+# Never commit pipeline files if accidentally copied here
+_builds/
+_agents/
+_brain/
+.env
+*.env
+build-log.json
