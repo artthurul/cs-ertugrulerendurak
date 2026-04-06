@@ -1,0 +1,14 @@
+{
+  "_author": "Ertugrul Eren Durak — https://www.ertugrulerendurak.com/",
+  "name": "Frame",
+  "short_name": "Frame",
+  "description": "An automated cinematic website pipeline. One prompt. One world.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#04040A",
+  "theme_color": "#4A9EFF",
+  "icons": [
+    { "src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

@@ -1,249 +1,1819 @@
+<!DOCTYPE html>
 <!--
-  Project:     cs.ertugrulerendurak.com — Creative Studio Portfolio
+  Project:     Frame — Cinematic Website Pipeline
   Author:      Ertugrul Eren Durak
   Website:     https://www.ertugrulerendurak.com/
-  Repository:  https://github.com/artthurul/cs-ertugrulerendurak
-  Description: Landing page and portfolio showcase for the Creative Studio
-               automated cinematic website production pipeline.
+  Built:       2026-04-06
+  Description: The flagship homepage for the Frame automated cinematic website
+               pipeline — scroll-driven video, nineteen AI agents, research to
+               live deployment in under eight minutes.
+  Live URL:    https://cs.ertugrulerendurak.com/
+  Repository:  https://github.com/artthurul/frame-studio
+  Pipeline:    frame-studio (public) → Vercel
+  License:     MIT
 -->
-<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Creative Studio — Ertugrul Eren Durak</title>
-<meta name="description" content="Automated cinematic website production pipeline. Scroll-animated, film-grain, parallax sites built daily by AI agents.">
-<meta property="og:title" content="Creative Studio — Ertugrul Eren Durak">
-<meta property="og:description" content="Automated cinematic website production. Scroll-animated sites built daily by AI agents.">
-<meta property="og:url" content="https://cs.ertugrulerendurak.com">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --bg:#080808;
-  --bg2:#0D0D0D;
-  --bg3:#111111;
-  --gold:#C9A84C;
-  --gold-dim:rgba(201,168,76,0.3);
-  --text:#F0EDE6;
-  --text2:#8A8880;
-  --text3:#3A3835;
-  --border:rgba(255,255,255,0.06);
-}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:'Space Grotesk',sans-serif;overflow-x:hidden;min-height:100vh}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frame — One prompt. One world.</title>
+  <!-- SEO — AGENT-10 -->
+  <meta name="description" content="Frame builds cinematic websites autonomously — research, design, code, deploy. Nineteen AI agents. One prompt. Live in under eight minutes.">
+  <meta name="keywords" content="automated website pipeline, cinematic website, scroll-driven animation, AI web development, GSAP ScrollTrigger, Higgsfield, creative studio, Ankara, Ertugrul Eren Durak, cinematic HTML, automated deployment">
+  <meta name="author" content="Ertugrul Eren Durak">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://cs.ertugrulerendurak.com/">
 
-/* Film grain */
-body::before{content:'';position:fixed;inset:0;z-index:1000;pointer-events:none;opacity:0.035;
-background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-background-size:128px 128px}
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Frame — One prompt. One world.">
+  <meta property="og:description" content="Frame builds cinematic websites autonomously — nineteen AI agents from research to live deployment, in under eight minutes.">
+  <meta property="og:url" content="https://cs.ertugrulerendurak.com/">
+  <meta property="og:image" content="https://cs.ertugrulerendurak.com/assets/hero-start.png">
+  <meta property="og:image:width" content="1920">
+  <meta property="og:image:height" content="1080">
+  <meta property="og:site_name" content="Frame">
+  <meta property="og:locale" content="en_US">
 
-/* Vignette */
-body::after{content:'';position:fixed;inset:0;z-index:999;pointer-events:none;
-background:radial-gradient(ellipse at center,transparent 40%,rgba(0,0,0,0.7) 100%)}
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Frame — One prompt. One world.">
+  <meta name="twitter:description" content="Frame builds cinematic websites autonomously — nineteen AI agents from research to live deployment.">
+  <meta name="twitter:image" content="https://cs.ertugrulerendurak.com/assets/hero-start.png">
+  <meta name="twitter:creator" content="@ertugruldurak">
 
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:28px 60px;transition:background 0.4s,border-color 0.4s;border-bottom:1px solid transparent}
-nav.scrolled{background:rgba(8,8,8,0.92);border-bottom-color:var(--gold-dim);backdrop-filter:blur(12px)}
-.nav-logo{font-size:12px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold)}
-.nav-links{display:flex;gap:36px;list-style:none}
-.nav-links a{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--text2);text-decoration:none;transition:color 0.2s}
-.nav-links a:hover{color:var(--text)}
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Frame",
+    "url": "https://cs.ertugrulerendurak.com/",
+    "description": "An automated cinematic website pipeline that builds and deploys premium digital experiences from a single prompt. Research, design, code, deploy — without stopping.",
+    "founder": {
+      "@type": "Person",
+      "name": "Ertugrul Eren Durak",
+      "url": "https://www.ertugrulerendurak.com/"
+    },
+    "foundingDate": "2026",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Ankara",
+      "addressCountry": "TR"
+    },
+    "sameAs": [
+      "https://www.ertugrulerendurak.com/",
+      "https://github.com/ertugrulerendurak"
+    ]
+  }
+  </script>
 
-/* Hero */
-.hero{height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 60px 80px;position:relative;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#08090C 0%,#080808 50%,#0C0A08 100%)}
-.hero-bg::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 70% 40%,rgba(15,20,35,0.8) 0%,transparent 60%)}
-.hero-overline{font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:16px}
-.hero-overline::before{content:'';width:40px;height:1px;background:var(--gold)}
-.hero h1{font-size:clamp(48px,7vw,96px);font-weight:700;line-height:0.92;letter-spacing:-0.02em;max-width:700px;margin-bottom:28px}
-.hero h1 span{color:var(--gold)}
-.hero-sub{font-size:14px;color:var(--text2);max-width:400px;line-height:1.7;margin-bottom:48px}
-.hero-cta{display:flex;gap:24px;align-items:center}
-.btn-primary{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--bg);background:var(--gold);border:none;padding:15px 32px;cursor:pointer;font-family:inherit;font-weight:600;text-decoration:none;transition:opacity 0.2s}
-.btn-primary:hover{opacity:0.85}
-.btn-ghost{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--text2);background:none;border:1px solid rgba(240,237,230,0.15);padding:15px 32px;cursor:pointer;font-family:inherit;text-decoration:none;transition:color 0.2s,border-color 0.2s}
-.btn-ghost:hover{color:var(--text);border-color:rgba(240,237,230,0.3)}
-.scroll-line{position:absolute;bottom:40px;right:60px;display:flex;flex-direction:column;align-items:center;gap:8px}
-.scroll-line span{font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:var(--text3);writing-mode:vertical-rl}
-.scroll-line-bar{width:1px;height:60px;background:linear-gradient(to bottom,var(--gold),transparent);animation:pulse 2s ease-in-out infinite}
-@keyframes pulse{0%,100%{opacity:0.3}50%{opacity:1}}
+  <!-- Preload critical assets -->
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//fonts.gstatic.com">
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+  <link rel="preload" href="assets/hero-start.png" as="image">
+  <link rel="manifest" href="manifest.json">
 
-/* Stats */
-.stats{padding:80px 60px;border-top:1px solid var(--border);display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
-.stat{background:var(--bg2);padding:40px;text-align:center}
-.stat-val{font-size:48px;font-weight:700;color:var(--gold);letter-spacing:-0.02em;line-height:1;margin-bottom:8px}
-.stat-label{font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--text2)}
+  <meta name="theme-color" content="#04040A">
 
-/* Projects */
-.projects-section{padding:100px 60px;background:var(--bg)}
-.section-tag{font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:12px}
-.section-tag::before{content:'';width:24px;height:1px;background:var(--gold)}
-.section-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:60px}
-.section-header h2{font-size:clamp(32px,4vw,52px);font-weight:700;line-height:1;letter-spacing:-0.02em}
-.projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:2px}
-.project-card{background:var(--bg3);position:relative;overflow:hidden;cursor:pointer;text-decoration:none;display:block}
-.project-card:hover .card-image img{transform:scale(1.04)}
-.card-image{aspect-ratio:16/9;overflow:hidden;background:var(--bg2);position:relative}
-.card-image img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94)}
-.card-category{position:absolute;top:12px;left:12px;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);background:rgba(8,8,8,0.8);padding:4px 10px;backdrop-filter:blur(8px)}
-.card-info{padding:20px 24px 24px}
-.card-title{font-size:18px;font-weight:600;letter-spacing:-0.01em;margin-bottom:6px;color:var(--text)}
-.card-subject{font-size:12px;color:var(--text2);line-height:1.5;margin-bottom:10px}
-.card-meta{font-size:10px;letter-spacing:0.1em;color:var(--text3)}
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-/* Empty state */
-.empty-state{text-align:center;padding:80px 40px;color:var(--text2)}
-.empty-state h3{font-size:20px;font-weight:500;margin-bottom:12px;color:var(--text)}
-.empty-state p{font-size:13px;line-height:1.7;max-width:360px;margin:0 auto}
+  <!-- Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.2.3/dist/lenis.css">
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.2.3/dist/lenis.min.js"></script>
 
-/* About */
-.about{padding:100px 60px;background:var(--bg2);border-top:1px solid var(--border)}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-top:60px}
-.about-text p{font-size:14px;color:var(--text2);line-height:1.8;margin-bottom:20px}
-.pipeline-steps{display:flex;flex-direction:column;gap:1px;background:var(--border)}
-.pipeline-step{background:var(--bg3);padding:16px 20px;display:flex;gap:14px;align-items:flex-start}
-.step-num{font-size:10px;letter-spacing:0.15em;color:var(--gold);min-width:28px;margin-top:2px}
-.step-text{font-size:12px;color:var(--text2);line-height:1.5}
-.step-text strong{color:var(--text);font-weight:500}
+  <style>
+    /* ─────────────────────────────────────────
+       CSS Variables — palette
+       ───────────────────────────────────────── */
+    :root {
+      --bg-primary:       #04040A;
+      --bg-secondary:     #07070F;
+      --bg-tertiary:      #0C0C1E;
+      --accent:           #4A9EFF;
+      --accent-dim:       #1B3A6B;
+      --text-primary:     #FFFFFF;
+      --text-dim:         #8A94B0;
+      --text-faint:       #3A4060;
+      --grain-opacity:    0.035;
+      --font-heading:     'Space Grotesk', sans-serif;
+      --font-body:        'Inter', sans-serif;
+      --font-mono:        'IBM Plex Mono', monospace;
+    }
 
-footer{padding:40px 60px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
-footer .logo{font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold)}
-footer p{font-size:11px;color:var(--text3)}
-footer a{color:var(--text3);text-decoration:none;border-bottom:1px solid currentColor;transition:color 0.2s}
-footer a:hover{color:var(--text2)}
+    /* ─────────────────────────────────────────
+       Effect 8 — Film grain + vignette (persistent)
+       ───────────────────────────────────────── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      pointer-events: none;
+      opacity: var(--grain-opacity);
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 128px 128px;
+    }
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 9998;
+      pointer-events: none;
+      background: radial-gradient(ellipse at center, transparent 35%, rgba(4,4,10,0.85) 100%);
+    }
 
-.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.8s ease,transform 0.8s ease}
-.reveal.visible{opacity:1;transform:translateY(0)}
-.reveal-delay-1{transition-delay:0.1s}
-.reveal-delay-2{transition-delay:0.2s}
-</style>
+    /* ─────────────────────────────────────────
+       Reset + Base
+       ───────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: auto; }
+    body {
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img, svg { display: block; }
+
+    /* ─────────────────────────────────────────
+       Navigation
+       ───────────────────────────────────────── */
+    .site-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 48px;
+      opacity: 0;
+      transform: translateY(-12px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .site-nav.visible { opacity: 1; transform: translateY(0); }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .nav-logo-symbol {
+      width: 32px;
+      height: 32px;
+      position: relative;
+      flex-shrink: 0;
+    }
+    .nav-logo-symbol::before {
+      content: '';
+      position: absolute;
+      inset: 3px;
+      border: 1.2px solid var(--accent);
+      border-radius: 1px;
+    }
+    .nav-logo-symbol::after {
+      content: '';
+      position: absolute;
+      inset: 8px;
+      border: 0.8px solid rgba(255,255,255,0.9);
+      border-radius: 0.5px;
+    }
+    .nav-logo-text {
+      font-family: var(--font-heading);
+      font-weight: 500;
+      font-size: 17px;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      color: var(--text-dim);
+      transition: color 0.3s ease;
+    }
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-cta {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--accent) !important;
+      border: 1px solid var(--accent-dim);
+      padding: 8px 20px;
+      border-radius: 2px;
+      transition: background 0.3s ease, border-color 0.3s ease !important;
+    }
+    .nav-cta:hover { background: rgba(74,158,255,0.08); border-color: var(--accent) !important; }
+
+    /* ─────────────────────────────────────────
+       Effect 1 — Video scroll container
+       ───────────────────────────────────────── */
+    .video-scroll-container {
+      height: 500vh;
+      position: relative;
+    }
+    .video-sticky {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      width: 100%;
+      overflow: hidden;
+      background: var(--bg-primary);
+    }
+    .hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    .hero-video.loaded { opacity: 1; }
+
+    /* ─────────────────────────────────────────
+       CSS Space Descent Simulation (fallback layers)
+       ───────────────────────────────────────── */
+    .space-scene {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    .space-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .earth-arc {
+      position: absolute;
+      bottom: -60vh;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200vw;
+      height: 200vw;
+      border-radius: 50%;
+      background: radial-gradient(
+        ellipse at center 35%,
+        rgba(30, 80, 180, 0.18) 0%,
+        rgba(10, 40, 100, 0.25) 30%,
+        rgba(4, 4, 10, 0) 60%
+      );
+      border: 1px solid rgba(74, 158, 255, 0.12);
+      will-change: transform;
+    }
+    .earth-glow {
+      position: absolute;
+      bottom: -30vh;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 160vw;
+      height: 60vh;
+      background: radial-gradient(
+        ellipse at center bottom,
+        rgba(74, 158, 255, 0.06) 0%,
+        rgba(20, 60, 140, 0.04) 50%,
+        transparent 80%
+      );
+    }
+    .atmosphere-band {
+      position: absolute;
+      bottom: 28vh;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(74,158,255,0.08) 20%,
+        rgba(100,180,255,0.18) 50%,
+        rgba(74,158,255,0.08) 80%,
+        transparent 100%
+      );
+      filter: blur(2px);
+    }
+    .cloud-layer {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(180,200,240,0.0) 0%, rgba(180,200,240,0.0) 100%);
+      opacity: 0;
+    }
+    .darkness-layer {
+      position: absolute;
+      inset: 0;
+      background: var(--bg-primary);
+      opacity: 0;
+    }
+
+    /* Laptop reveal element */
+    .laptop-reveal {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .laptop-screen {
+      width: min(600px, 80vw);
+      aspect-ratio: 16 / 10;
+      border: 1.5px solid rgba(74,158,255,0.4);
+      border-radius: 8px;
+      background: rgba(7,7,15,0.97);
+      box-shadow:
+        0 0 60px rgba(74,158,255,0.12),
+        0 0 120px rgba(74,158,255,0.06),
+        inset 0 0 40px rgba(74,158,255,0.04);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: scaleY(0.02);
+      transform-origin: center center;
+    }
+    .laptop-screen-inner {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--accent);
+      opacity: 0;
+      letter-spacing: 0.05em;
+      text-align: center;
+      line-height: 2;
+    }
+
+    /* Zero-gravity floating components */
+    .zero-g-components {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .zero-g-item {
+      position: absolute;
+      border: 1px solid rgba(74,158,255,0.15);
+      background: rgba(7,7,15,0.6);
+      border-radius: 3px;
+      backdrop-filter: blur(4px);
+    }
+    .zero-g-nav { top: 8%; left: 10%; right: 10%; height: 40px; border-radius: 4px; }
+    .zero-g-hero-text { top: 22%; left: 15%; width: 55%; height: 100px; }
+    .zero-g-card-1 { top: 45%; left: 8%; width: 22%; height: 120px; }
+    .zero-g-card-2 { top: 42%; left: 34%; width: 22%; height: 120px; }
+    .zero-g-card-3 { top: 47%; left: 60%; width: 22%; height: 120px; }
+    .zero-g-cta { bottom: 22%; left: 35%; width: 160px; height: 44px; border-radius: 3px; background: rgba(74,158,255,0.08); border-color: rgba(74,158,255,0.3); }
+
+    /* ─────────────────────────────────────────
+       Hero overlay content (scroll-timed)
+       ───────────────────────────────────────── */
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 24px;
+      z-index: 10;
+    }
+    .hero-overline {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: var(--accent);
+      text-transform: uppercase;
+      opacity: 0;
+      transform: translateY(8px);
+      margin-bottom: 24px;
+    }
+    .hero-headline {
+      font-family: var(--font-heading);
+      font-size: clamp(52px, 8vw, 120px);
+      font-weight: 600;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      color: var(--text-primary);
+      opacity: 0;
+      transform: translateY(16px);
+      margin-bottom: 28px;
+      max-width: 900px;
+    }
+    .hero-sub {
+      font-family: var(--font-body);
+      font-size: clamp(15px, 1.8vw, 20px);
+      font-weight: 300;
+      color: var(--text-dim);
+      max-width: 560px;
+      line-height: 1.65;
+      opacity: 0;
+      transform: translateY(12px);
+      margin-bottom: 48px;
+    }
+    .hero-cta-group {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    .btn-primary {
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--bg-primary);
+      background: var(--accent);
+      padding: 14px 32px;
+      border-radius: 2px;
+      letter-spacing: 0.01em;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+    .btn-ghost {
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text-dim);
+      background: transparent;
+      padding: 14px 32px;
+      border-radius: 2px;
+      border: 1px solid var(--text-faint);
+      cursor: pointer;
+      transition: border-color 0.3s ease, color 0.3s ease;
+    }
+    .btn-ghost:hover { border-color: var(--text-dim); color: var(--text-primary); }
+
+    /* scroll progress indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      opacity: 0;
+      z-index: 10;
+    }
+    .scroll-indicator span {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      color: var(--text-faint);
+      text-transform: uppercase;
+    }
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--text-faint), transparent);
+      animation: scrollPulse 2s ease infinite;
+    }
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.3; transform: scaleY(1); }
+      50% { opacity: 1; transform: scaleY(1.2); }
+    }
+
+    /* ─────────────────────────────────────────
+       Effect 2 — Interconnected section transitions
+       ───────────────────────────────────────── */
+    .section-blend {
+      position: relative;
+      z-index: 2;
+      margin-top: -2px; /* no gap */
+    }
+
+    /* ─────────────────────────────────────────
+       Section 2 — Pipeline
+       ───────────────────────────────────────── */
+    .section-pipeline {
+      padding: 140px 0 120px;
+      background: var(--bg-secondary);
+      position: relative;
+      overflow: hidden;
+    }
+    /* Effect 5 — animated gradient background */
+    .section-pipeline::before {
+      content: '';
+      position: absolute;
+      inset: -50%;
+      background: linear-gradient(
+        135deg,
+        var(--bg-secondary) 0%,
+        rgba(27,58,107,0.12) 50%,
+        var(--bg-secondary) 100%
+      );
+      background-size: 400% 400%;
+      animation: gradientShift 14s ease infinite;
+    }
+    @keyframes gradientShift {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 48px;
+      position: relative;
+      z-index: 1;
+    }
+    .section-tag {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: var(--accent);
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 20px;
+      opacity: 0;
+    }
+    .section-headline {
+      font-family: var(--font-heading);
+      font-size: clamp(36px, 5vw, 72px);
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+    }
+    .section-intro {
+      font-family: var(--font-body);
+      font-size: clamp(15px, 1.5vw, 18px);
+      font-weight: 300;
+      color: var(--text-dim);
+      max-width: 620px;
+      line-height: 1.7;
+      margin-bottom: 72px;
+    }
+
+    /* Pipeline cards */
+    .pipeline-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1px;
+      background: var(--text-faint);
+      border: 1px solid var(--text-faint);
+    }
+    .pipeline-card {
+      background: var(--bg-secondary);
+      padding: 36px 32px;
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    .pipeline-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 2px; height: 0;
+      background: var(--accent);
+      transition: height 0.6s ease;
+    }
+    .pipeline-card:hover::before { height: 100%; }
+    .pipeline-card-agent {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .pipeline-card-title {
+      font-family: var(--font-heading);
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+    .pipeline-card-desc {
+      font-family: var(--font-body);
+      font-size: 14px;
+      color: var(--text-dim);
+      line-height: 1.65;
+    }
+
+    /* ─────────────────────────────────────────
+       Section 3 — Portfolio
+       ───────────────────────────────────────── */
+    .section-portfolio {
+      padding: 140px 0 120px;
+      background: var(--bg-primary);
+      position: relative;
+      overflow: hidden;
+    }
+    .section-portfolio::before {
+      content: '';
+      position: absolute;
+      inset: -50%;
+      background: linear-gradient(
+        225deg,
+        var(--bg-primary) 0%,
+        rgba(74,158,255,0.04) 50%,
+        var(--bg-primary) 100%
+      );
+      background-size: 400% 400%;
+      animation: gradientShift 18s ease infinite reverse;
+    }
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 24px;
+      margin-top: 64px;
+    }
+    .portfolio-card {
+      border: 1px solid var(--text-faint);
+      background: rgba(7,7,15,0.6);
+      padding: 32px;
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.4s ease, transform 0.4s ease;
+      opacity: 0;
+      /* Effect 6 — mask reveal */
+      mask-image: linear-gradient(to bottom, transparent 0%, black 30%, black 70%, transparent 100%);
+      mask-size: 100% 300%;
+      mask-position: 0% 0%;
+    }
+    .portfolio-card:hover {
+      border-color: var(--accent-dim);
+      transform: translateY(-4px);
+    }
+    .portfolio-card-accent {
+      width: 32px;
+      height: 3px;
+      border-radius: 2px;
+      margin-bottom: 20px;
+    }
+    .portfolio-card-name {
+      font-family: var(--font-heading);
+      font-size: 22px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+    .portfolio-card-category {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      color: var(--text-faint);
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .portfolio-card-link {
+      font-family: var(--font-body);
+      font-size: 13px;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: gap 0.3s ease;
+    }
+    .portfolio-card:hover .portfolio-card-link { gap: 14px; }
+    .portfolio-card-link::after { content: '→'; }
+
+    /* Empty state */
+    .portfolio-empty {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 80px 24px;
+      border: 1px solid var(--text-faint);
+      border-radius: 4px;
+      opacity: 0;
+    }
+    .portfolio-empty-headline {
+      font-family: var(--font-heading);
+      font-size: 24px;
+      font-weight: 400;
+      color: var(--text-dim);
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+    .portfolio-empty-sub {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-faint);
+      letter-spacing: 0.1em;
+    }
+    .loading-dots::after {
+      content: '';
+      animation: dots 1.6s steps(4, end) infinite;
+    }
+    @keyframes dots {
+      0%   { content: ''; }
+      25%  { content: '.'; }
+      50%  { content: '..'; }
+      75%  { content: '...'; }
+      100% { content: ''; }
+    }
+
+    /* ─────────────────────────────────────────
+       Section 4 — Capabilities
+       ───────────────────────────────────────── */
+    .section-capabilities {
+      padding: 140px 0 120px;
+      background: var(--bg-secondary);
+      position: relative;
+      overflow: hidden;
+    }
+    .section-capabilities::before {
+      content: '';
+      position: absolute;
+      inset: -50%;
+      background: linear-gradient(
+        315deg,
+        var(--bg-secondary) 0%,
+        rgba(27,58,107,0.1) 50%,
+        var(--bg-secondary) 100%
+      );
+      background-size: 400% 400%;
+      animation: gradientShift 16s ease infinite;
+    }
+    .capabilities-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2px;
+      background: rgba(58,64,96,0.2);
+      margin-top: 64px;
+    }
+    .cap-card {
+      background: var(--bg-secondary);
+      padding: 40px 32px;
+      position: relative;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    .cap-icon {
+      width: 32px;
+      height: 32px;
+      margin-bottom: 24px;
+    }
+    .cap-title {
+      font-family: var(--font-heading);
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+    }
+
+    /* ─────────────────────────────────────────
+       Section 5 — Signal / Stats
+       ───────────────────────────────────────── */
+    .section-signal {
+      padding: 140px 0 120px;
+      background: var(--bg-tertiary);
+      position: relative;
+      overflow: hidden;
+    }
+    .section-signal::before {
+      content: '';
+      position: absolute;
+      inset: -50%;
+      background: radial-gradient(ellipse at center, rgba(74,158,255,0.05) 0%, transparent 70%);
+      animation: pulseBg 8s ease infinite;
+    }
+    @keyframes pulseBg {
+      0%, 100% { opacity: 0.6; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.1); }
+    }
+    .signal-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .signal-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+      margin-top: 48px;
+    }
+    .stat-item { border-left: 1px solid var(--text-faint); padding-left: 24px; }
+    .stat-value {
+      font-family: var(--font-heading);
+      font-size: clamp(42px, 5vw, 64px);
+      font-weight: 300;
+      letter-spacing: -0.04em;
+      color: var(--text-primary);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .stat-value span { color: var(--accent); }
+    .stat-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      color: var(--text-faint);
+      text-transform: uppercase;
+    }
+    .signal-right {
+      position: relative;
+    }
+    .signal-body {
+      font-family: var(--font-body);
+      font-size: clamp(15px, 1.5vw, 18px);
+      font-weight: 300;
+      color: var(--text-dim);
+      line-height: 1.75;
+      margin-bottom: 48px;
+    }
+
+    /* ─────────────────────────────────────────
+       Section 6 — CTA
+       ───────────────────────────────────────── */
+    .section-cta {
+      padding: 160px 0;
+      background: var(--bg-primary);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .section-cta::before {
+      content: '';
+      position: absolute;
+      inset: -50%;
+      background: radial-gradient(ellipse at center, rgba(74,158,255,0.04) 0%, transparent 60%);
+      background-size: 400% 400%;
+      animation: gradientShift 20s ease infinite;
+    }
+    .cta-overline {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: var(--accent);
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 24px;
+      opacity: 0;
+    }
+    .cta-headline {
+      font-family: var(--font-heading);
+      font-size: clamp(52px, 7vw, 100px);
+      font-weight: 600;
+      letter-spacing: -0.04em;
+      line-height: 1.0;
+      color: var(--text-primary);
+      margin-bottom: 24px;
+    }
+    .cta-sub {
+      font-family: var(--font-body);
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--text-dim);
+      margin-bottom: 56px;
+    }
+    .cta-form {
+      display: flex;
+      gap: 0;
+      max-width: 520px;
+      margin: 0 auto;
+      border: 1px solid var(--text-faint);
+      border-radius: 3px;
+      overflow: hidden;
+      transition: border-color 0.3s ease;
+    }
+    .cta-form:focus-within { border-color: var(--accent); }
+    .cta-input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      padding: 16px 20px;
+      font-family: var(--font-body);
+      font-size: 14px;
+      color: var(--text-primary);
+      font-weight: 300;
+    }
+    .cta-input::placeholder { color: var(--text-faint); }
+    .cta-submit {
+      background: var(--accent);
+      border: none;
+      padding: 16px 28px;
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--bg-primary);
+      cursor: pointer;
+      letter-spacing: 0.02em;
+      transition: opacity 0.3s ease;
+    }
+    .cta-submit:hover { opacity: 0.88; }
+
+    /* ─────────────────────────────────────────
+       Footer
+       ───────────────────────────────────────── */
+    footer {
+      padding: 28px 48px;
+      border-top: 1px solid var(--text-faint);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--bg-primary);
+    }
+    .footer-copy {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-faint);
+    }
+    .footer-copy a {
+      color: var(--text-dim);
+      transition: color 0.3s ease;
+    }
+    .footer-copy a:hover { color: var(--text-primary); }
+    .footer-build {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-faint);
+      letter-spacing: 0.08em;
+    }
+
+    /* ─────────────────────────────────────────
+       Effect 3 — Cursor dissolve characters
+       ───────────────────────────────────────── */
+    .dissolve-char { display: inline-block; }
+
+    /* ─────────────────────────────────────────
+       Effect 4 — SplitText scroll reveals
+       ───────────────────────────────────────── */
+    [data-reveal] { overflow: hidden; }
+    .line { overflow: hidden; display: block; }
+
+    /* ─────────────────────────────────────────
+       Responsive
+       ───────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .site-nav { padding: 16px 24px; }
+      .nav-links { display: none; }
+      .section-inner { padding: 0 24px; }
+      footer { padding: 24px; flex-direction: column; gap: 8px; text-align: center; }
+      .signal-layout { grid-template-columns: 1fr; gap: 40px; }
+      .hero-cta-group { flex-direction: column; }
+      .cta-form { flex-direction: column; }
+      .cta-submit { width: 100%; }
+    }
+    @media (min-width: 320px) and (max-width: 1920px) {
+      /* fluid scaling handled via clamp() above */
+    }
+  </style>
 </head>
 <body>
 
-<nav id="nav">
-  <div class="nav-logo">Ertugrul Eren Durak</div>
-  <ul class="nav-links">
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="https://www.ertugrulerendurak.com">Main site</a></li>
-  </ul>
-</nav>
+  <!-- Navigation -->
+  <nav class="site-nav" id="siteNav" aria-label="Primary navigation">
+    <a href="/" class="nav-logo" aria-label="Frame — home">
+      <div class="nav-logo-symbol" aria-hidden="true"></div>
+      <span class="nav-logo-text">Frame</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#pipeline">Pipeline</a></li>
+      <li><a href="#portfolio">Work</a></li>
+      <li><a href="#capabilities">Capabilities</a></li>
+      <li><a href="#cta" class="nav-cta">Start a build</a></li>
+    </ul>
+  </nav>
 
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-overline">Creative Studio — Automated production pipeline</div>
-  <h1 class="reveal">Cinematic<br>sites, built<br><span>daily.</span></h1>
-  <p class="hero-sub reveal reveal-delay-1">19 AI agents. One pipeline. A new scroll-animated cinematic website every day — deployed automatically at noon.</p>
-  <div class="hero-cta reveal reveal-delay-2">
-    <a href="#projects" class="btn-primary">View projects</a>
-    <a href="https://www.ertugrulerendurak.com" class="btn-ghost">About me</a>
-  </div>
-  <div class="scroll-line">
-    <div class="scroll-line-bar"></div>
-    <span>Scroll</span>
-  </div>
-</section>
+  <!-- ═══════════════════════════════════════
+       Section 1 — Hero / Video Scroll (500vh)
+       Effect 1: Scroll-driven video scrubbing
+       Effect 7: Lenis smooth scroll
+       ═══════════════════════════════════════ -->
+  <div class="video-scroll-container" id="videoScrollContainer">
+    <div class="video-sticky" id="videoSticky">
 
-<div class="stats">
-  <div class="stat reveal">
-    <div class="stat-val" id="total-count">0</div>
-    <div class="stat-label">Sites built</div>
-  </div>
-  <div class="stat reveal reveal-delay-1">
-    <div class="stat-val">19</div>
-    <div class="stat-label">AI agents</div>
-  </div>
-  <div class="stat reveal reveal-delay-2">
-    <div class="stat-val">Daily</div>
-    <div class="stat-label">Build cadence</div>
-  </div>
-</div>
+      <!-- Space scene (CSS simulation + video overlay) -->
+      <div class="space-scene" id="spaceScene" aria-hidden="true">
+        <canvas class="space-canvas" id="starCanvas"></canvas>
+        <div class="earth-arc" id="earthArc"></div>
+        <div class="earth-glow" id="earthGlow"></div>
+        <div class="atmosphere-band" id="atmosphereBand"></div>
+        <div class="cloud-layer" id="cloudLayer"></div>
+        <div class="darkness-layer" id="darknessLayer"></div>
 
-<section class="projects-section" id="projects">
-  <div class="section-tag">Portfolio</div>
-  <div class="section-header">
-    <h2 class="reveal">All productions.</h2>
-    <a href="#about" class="btn-ghost reveal" style="font-size:11px">How it works</a>
-  </div>
-  <div class="projects-grid" id="projects-grid">
-    <div class="empty-state">
-      <h3>First build coming soon.</h3>
-      <p>The pipeline is being configured. The first cinematic site will appear here automatically after the first automated build.</p>
-    </div>
-  </div>
-</section>
-
-<section class="about" id="about">
-  <div class="section-tag">The pipeline</div>
-  <div class="about-grid">
-    <div class="about-text">
-      <h2 class="reveal" style="font-size:clamp(28px,3vw,44px);font-weight:700;letter-spacing:-0.02em;line-height:1;margin-bottom:32px">19 agents.<br>One perfect<br><span style="color:var(--gold)">site daily.</span></h2>
-      <p class="reveal">Every day at noon, a research agent finds what the world is paying attention to. A planner decides the visual identity. A naming agent invents the brand. A visual director writes Higgsfield AI prompts for the hero video.</p>
-      <p class="reveal reveal-delay-1">A frontend builder produces the complete scroll-animated site. A security auditor checks every file. A signature agent marks every output. Then it deploys — automatically, without a single human touching the keyboard.</p>
-      <p class="reveal reveal-delay-2" style="color:var(--gold);font-size:13px">Built by <a href="https://www.ertugrulerendurak.com" style="color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold-dim)">Ertugrul Eren Durak</a></p>
-    </div>
-    <div class="pipeline-steps reveal">
-      <div class="pipeline-step"><span class="step-num">01</span><div class="step-text"><strong>Research</strong> — finds today's trending topic across defence, aviation, luxury, travel</div></div>
-      <div class="pipeline-step"><span class="step-num">02</span><div class="step-text"><strong>Planning</strong> — palette, typography, copy voice, page architecture decided</div></div>
-      <div class="pipeline-step"><span class="step-num">03</span><div class="step-text"><strong>Image generation</strong> — Higgsfield AI creates start and end frames at 2K</div></div>
-      <div class="pipeline-step"><span class="step-num">04</span><div class="step-text"><strong>Video generation</strong> — frames converted to cinematic hero video with motion presets</div></div>
-      <div class="pipeline-step"><span class="step-num">05</span><div class="step-text"><strong>Build</strong> — complete index.html with 6 cinematic effects, real copy, no frameworks</div></div>
-      <div class="pipeline-step"><span class="step-num">06</span><div class="step-text"><strong>Security audit</strong> — every file checked before any push to GitHub</div></div>
-      <div class="pipeline-step"><span class="step-num">07</span><div class="step-text"><strong>Deploy</strong> — pushed to GitHub, Vercel auto-deploys, live within 60 seconds</div></div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="logo">Creative Studio</div>
-  <p>Built by <a href="https://www.ertugrulerendurak.com">Ertugrul Eren Durak</a> — automated production pipeline</p>
-</footer>
-
-<script>
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 60));
-
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-
-// Load projects from feed.json
-async function loadProjects() {
-  try {
-    const res = await fetch('/projects/feed.json');
-    if (!res.ok) return;
-    const projects = await res.json();
-    if (!projects.length) return;
-
-    document.getElementById('total-count').textContent = projects.length;
-
-    const grid = document.getElementById('projects-grid');
-    grid.innerHTML = projects.map(p => `
-      <a href="/projects/${p.slug}/" class="project-card">
-        <div class="card-image">
-          <img src="/projects/${p.slug}/assets/hero-start.png"
-               alt="${p.brand_name} — ${p.subject}"
-               loading="lazy"
-               onerror="this.style.display='none'">
-          <span class="card-category">${p.category}</span>
+        <!-- Laptop reveal in darkness -->
+        <div class="laptop-reveal" id="laptopReveal">
+          <div class="laptop-screen" id="laptopScreen">
+            <div class="laptop-screen-inner" id="laptopScreenInner">
+              FRAME / PIPELINE<br>
+              INITIALISING<span class="loading-dots"></span>
+            </div>
+          </div>
         </div>
-        <div class="card-info">
-          <div class="card-title">${p.brand_name}</div>
-          <div class="card-subject">${p.subject}</div>
-          <div class="card-meta">${p.built_date} · Cinematic scroll site</div>
+
+        <!-- Zero-gravity UI components -->
+        <div class="zero-g-components" id="zeroGComponents">
+          <div class="zero-g-item zero-g-nav"></div>
+          <div class="zero-g-item zero-g-hero-text"></div>
+          <div class="zero-g-item zero-g-card-1"></div>
+          <div class="zero-g-item zero-g-card-2"></div>
+          <div class="zero-g-item zero-g-card-3"></div>
+          <div class="zero-g-item zero-g-cta"></div>
         </div>
+      </div>
+
+      <!-- Actual video (shown when assets/hero-video.mp4 exists) -->
+      <video class="hero-video" id="heroVideo" muted playsinline preload="auto"
+             poster="assets/hero-start.png"
+             aria-label="Frame cinematic hero sequence">
+        <source src="assets/hero-video.mp4" type="video/mp4">
+      </video>
+
+      <!-- Hero content overlays -->
+      <div class="hero-overlay" id="heroOverlay">
+        <span class="hero-overline" id="heroOverline">Ankara — Building for the world</span>
+        <h1 class="hero-headline" id="heroHeadline" aria-label="One prompt. One world.">
+          One prompt. One world.
+        </h1>
+        <p class="hero-sub" id="heroSub" data-reveal="lines">
+          Frame builds cinematic websites autonomously — from research to live deployment, without stopping.
+        </p>
+        <div class="hero-cta-group" id="heroCTA">
+          <a href="#portfolio" class="btn-primary">See the work</a>
+          <a href="#pipeline" class="btn-ghost">How it works</a>
+        </div>
+      </div>
+
+      <!-- Scroll invite -->
+      <div class="scroll-indicator" id="scrollIndicator" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       Section 2 — Pipeline
+       Effect 2: Interconnected from Section 1
+       Effect 5: Animated gradient background
+       ═══════════════════════════════════════ -->
+  <section class="section-pipeline section-blend" id="pipeline" aria-labelledby="pipelineHeadline">
+    <div class="section-inner">
+      <span class="section-tag" data-reveal="chars">The pipeline</span>
+      <h2 class="section-headline" id="pipelineHeadline" data-dissolve>Nineteen agents. Zero gaps.</h2>
+      <p class="section-intro" data-reveal="lines">
+        Frame runs a complete automated pipeline — research, persona, naming, visual direction,
+        image generation, frontend engineering, SEO, security, deployment.
+        One command starts the sequence.
+      </p>
+
+      <div class="pipeline-grid" role="list">
+        <div class="pipeline-card" role="listitem">
+          <span class="pipeline-card-agent">AGENT-01</span>
+          <div class="pipeline-card-title">Research</div>
+          <p class="pipeline-card-desc">Finds today's highest-scoring topic across six categories. Scores visual potential, search momentum, and category freshness.</p>
+        </div>
+        <div class="pipeline-card" role="listitem">
+          <span class="pipeline-card-agent">AGENT-03</span>
+          <div class="pipeline-card-title">Visual Direction</div>
+          <p class="pipeline-card-desc">Writes every cinematic prompt and creates every SVG asset. Determines the entire visual world before a single line of code is written.</p>
+        </div>
+        <div class="pipeline-card" role="listitem">
+          <span class="pipeline-card-agent">AGENT-06</span>
+          <div class="pipeline-card-title">Image Generation</div>
+          <p class="pipeline-card-desc">Sends precise prompts to Higgsfield — 2K stills, start frame and end frame. Cinematically accurate to the subject.</p>
+        </div>
+        <div class="pipeline-card" role="listitem">
+          <span class="pipeline-card-agent">AGENT-07</span>
+          <div class="pipeline-card-title">Video Generation</div>
+          <p class="pipeline-card-desc">Animates the cinematic sequence. Orbital and descent presets selected by subject. Duration: six seconds. No manual review.</p>
+        </div>
+        <div class="pipeline-card" role="listitem">
+          <span class="pipeline-card-agent">AGENT-09</span>
+          <div class="pipeline-card-title">Frontend Build</div>
+          <p class="pipeline-card-desc">Writes a single self-contained index.html with all eight cinematic effects — scroll-driven video, cursor dissolve, mask reveals, film grain.</p>
+        </div>
+        <div class="pipeline-card" role="listitem">
+          <span class="pipeline-card-agent">AGENT-12</span>
+          <div class="pipeline-card-title">Deploy</div>
+          <p class="pipeline-card-desc">Creates the GitHub repository, commits all assets, and triggers Vercel. From zero to live in under eight minutes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       Section 3 — Portfolio
+       Effect 2: Interconnected from Section 2
+       Effect 6: CSS mask reveals on cards
+       ═══════════════════════════════════════ -->
+  <section class="section-portfolio section-blend" id="portfolio" aria-labelledby="portfolioHeadline">
+    <div class="section-inner">
+      <span class="section-tag" data-reveal="chars">Built by Frame</span>
+      <h2 class="section-headline" id="portfolioHeadline" data-dissolve>Every site. One source.</h2>
+      <p class="section-intro" data-reveal="lines">
+        Each build is a complete cinematic world — researched, named, shot, coded, and deployed
+        by the pipeline. No templates. No repetition.
+      </p>
+      <div class="portfolio-grid" id="portfolioGrid" role="list" aria-live="polite" aria-label="Portfolio of built sites">
+        <!-- Populated from /projects/feed.json -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       Section 4 — Capabilities
+       Effect 2: Interconnected from Section 3
+       Effect 5: Animated gradient background
+       ═══════════════════════════════════════ -->
+  <section class="section-capabilities section-blend" id="capabilities" aria-labelledby="capabilitiesHeadline">
+    <div class="section-inner">
+      <span class="section-tag" data-reveal="chars">What Frame does</span>
+      <h2 class="section-headline" id="capabilitiesHeadline" data-dissolve>The full sequence.</h2>
+      <p class="section-intro" data-reveal="lines">
+        Every capability runs in the correct order. Nothing is skipped. Nothing is approximated.
+      </p>
+      <div class="capabilities-grid" role="list">
+        <div class="cap-card" role="listitem">
+          <img src="assets/icons/cap-01.svg" class="cap-icon" alt="" aria-hidden="true" width="32" height="32">
+          <div class="cap-title" data-reveal="words">Trend Intelligence</div>
+        </div>
+        <div class="cap-card" role="listitem">
+          <img src="assets/icons/cap-02.svg" class="cap-icon" alt="" aria-hidden="true" width="32" height="32">
+          <div class="cap-title" data-reveal="words">Brand Identity & Naming</div>
+        </div>
+        <div class="cap-card" role="listitem">
+          <img src="assets/icons/cap-03.svg" class="cap-icon" alt="" aria-hidden="true" width="32" height="32">
+          <div class="cap-title" data-reveal="words">Cinematic Prompt Engineering</div>
+        </div>
+        <div class="cap-card" role="listitem">
+          <img src="assets/icons/cap-04.svg" class="cap-icon" alt="" aria-hidden="true" width="32" height="32">
+          <div class="cap-title" data-reveal="words">AI Image & Video Generation</div>
+        </div>
+        <div class="cap-card" role="listitem">
+          <img src="assets/icons/cap-05.svg" class="cap-icon" alt="" aria-hidden="true" width="32" height="32">
+          <div class="cap-title" data-reveal="words">Scroll-Driven Frontend Engineering</div>
+        </div>
+        <div class="cap-card" role="listitem">
+          <img src="assets/icons/cap-06.svg" class="cap-icon" alt="" aria-hidden="true" width="32" height="32">
+          <div class="cap-title" data-reveal="words">Automated GitHub & Vercel Deployment</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       Section 5 — Signal / Stats
+       Effect 2: Interconnected from Section 4
+       ═══════════════════════════════════════ -->
+  <section class="section-signal section-blend" id="signal" aria-labelledby="signalHeadline">
+    <div class="section-inner">
+      <div class="signal-layout">
+        <div class="signal-left">
+          <span class="section-tag" data-reveal="chars">The number</span>
+          <h2 class="section-headline" id="signalHeadline" data-dissolve>Built today.</h2>
+          <div class="signal-stats" role="list">
+            <div class="stat-item" role="listitem">
+              <div class="stat-value"><span>19</span></div>
+              <div class="stat-label">Agents in the pipeline</div>
+            </div>
+            <div class="stat-item" role="listitem">
+              <div class="stat-value"><span>6</span></div>
+              <div class="stat-label">Categories covered</div>
+            </div>
+            <div class="stat-item" role="listitem">
+              <div class="stat-value">&lt;<span>8</span>min</div>
+              <div class="stat-label">Research to live deployment</div>
+            </div>
+          </div>
+        </div>
+        <div class="signal-right">
+          <p class="signal-body" data-reveal="lines">
+            Frame runs daily at 12:00 Ankara time. Each build produces a complete,
+            deployable cinematic website. The pipeline has no off switch.
+          </p>
+          <a href="#cta" class="btn-primary">Start a build</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       Section 6 — CTA
+       Effect 3: Cursor dissolve on headline
+       ═══════════════════════════════════════ -->
+  <section class="section-cta section-blend" id="cta" aria-labelledby="ctaHeadline">
+    <div class="section-inner" style="text-align:center;">
+      <span class="cta-overline" id="ctaOverline">Work with Frame</span>
+      <h2 class="cta-headline" id="ctaHeadline" data-dissolve>Let's build something.</h2>
+      <p class="cta-sub" data-reveal="lines">Send a subject. Frame does the rest.</p>
+      <form class="cta-form" id="ctaForm" onsubmit="handleCtaSubmit(event)" novalidate>
+        <input
+          type="text"
+          class="cta-input"
+          id="ctaInput"
+          placeholder="What should we build?"
+          aria-label="Describe your build subject"
+          autocomplete="off"
+        >
+        <button type="submit" class="cta-submit">Send</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <p class="footer-copy">
+      &copy; 2026 <a href="https://www.ertugrulerendurak.com/" target="_blank" rel="noopener">Ertugrul Eren Durak</a>
+      &nbsp;&middot;&nbsp;
+      <a href="https://www.ertugrulerendurak.com/" target="_blank" rel="noopener">ertugrulerendurak.com</a>
+    </p>
+    <span class="footer-build">Frame Pipeline &middot; Build 2026-04-06</span>
+    <p style="font-size:10px;letter-spacing:0.15em;color:var(--text-faint);margin-top:0">
+      Built by
+      <a href="https://www.ertugrulerendurak.com/"
+         target="_blank"
+         rel="noopener noreferrer"
+         style="color:var(--text-faint);text-decoration:none;border-bottom:1px solid currentColor">
+        Ertugrul Eren Durak
       </a>
-    `).join('');
+    </p>
+  </footer>
+  <!-- AGENT-13 attribution — mandatory on every build -->
+  <!-- Verified: ertugrulerendurak.com present in footer -->
 
-    document.querySelectorAll('.project-card').forEach(el => obs.observe(el));
-  } catch(e) {
-    // feed.json doesn't exist yet — empty state stays
+  <script>
+  /* ═══════════════════════════════════════════════════════════
+     FRAME — Cinematic JS
+     Author: Ertugrul Eren Durak | https://www.ertugrulerendurak.com/
+     All eight cinematic effects implemented
+     ═══════════════════════════════════════════════════════════ */
+
+  // ── Register plugins immediately after loading ────────────────
+  gsap.registerPlugin(ScrollTrigger, SplitText);
+
+  // ── Effect 7 — Lenis smooth scroll ───────────────────────────
+  const lenis = new Lenis({
+    duration: 1.4,
+    smoothWheel: true,
+    easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+  });
+  lenis.on('scroll', ScrollTrigger.update);
+  gsap.ticker.add(time => lenis.raf(time * 1000));
+  gsap.ticker.lagSmoothing(0);
+
+  // ── Star canvas (procedural starfield) ───────────────────────
+  (function initStarfield() {
+    const canvas = document.getElementById('starCanvas');
+    const ctx = canvas.getContext('2d');
+    let stars = [];
+    let W, H;
+
+    function resize() {
+      W = canvas.width = window.innerWidth;
+      H = canvas.height = window.innerHeight;
+    }
+
+    function generateStars(count) {
+      stars = [];
+      for (let i = 0; i < count; i++) {
+        stars.push({
+          x: Math.random() * W,
+          y: Math.random() * H,
+          r: Math.random() * 1.2 + 0.2,
+          a: Math.random() * 0.7 + 0.2,
+          twinkle: Math.random() * Math.PI * 2
+        });
+      }
+    }
+
+    let starOpacity = 1;
+
+    function draw(time) {
+      ctx.clearRect(0, 0, W, H);
+      if (starOpacity <= 0) return;
+      stars.forEach(s => {
+        s.twinkle += 0.008;
+        const alpha = s.a * (0.7 + 0.3 * Math.sin(s.twinkle)) * starOpacity;
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(200,215,255,${alpha})`;
+        ctx.fill();
+      });
+    }
+
+    function loop(time) {
+      draw(time);
+      requestAnimationFrame(loop);
+    }
+
+    resize();
+    generateStars(280);
+    loop(0);
+    window.addEventListener('resize', () => { resize(); generateStars(280); });
+
+    // Expose for scroll control
+    window._setStarOpacity = v => { starOpacity = Math.max(0, Math.min(1, v)); };
+  })();
+
+  // ── Effect 1 — Scroll-driven video scrubbing ─────────────────
+  const heroVideo = document.getElementById('heroVideo');
+  let videoReady = false;
+
+  heroVideo.pause();
+  heroVideo.load();
+
+  heroVideo.addEventListener('loadedmetadata', () => {
+    videoReady = true;
+    heroVideo.classList.add('loaded');
+    document.getElementById('spaceScene').style.opacity = '0';
+  });
+  heroVideo.addEventListener('error', () => {
+    // Video not found — CSS space scene remains active
+    console.log('[Frame] No video asset — CSS space scene active.');
+  });
+
+  // Main scroll scrubber (works for both video and CSS scene)
+  ScrollTrigger.create({
+    trigger: '.video-scroll-container',
+    start: 'top top',
+    end: 'bottom bottom',
+    scrub: 1,
+    onUpdate(self) {
+      const p = self.progress;
+
+      // Video scrubbing
+      if (videoReady && heroVideo.duration) {
+        heroVideo.currentTime = p * heroVideo.duration;
+      }
+
+      // CSS space scene descent simulation
+      if (!videoReady) {
+        animateSpaceScene(p);
+      }
+    }
+  });
+
+  function animateSpaceScene(p) {
+    // Stars fade as we enter atmosphere (0.2–0.5)
+    const starOp = p < 0.2 ? 1 : p > 0.5 ? 0 : 1 - ((p - 0.2) / 0.3);
+    window._setStarOpacity(starOp);
+
+    // Earth arc descends and enlarges (0–0.35)
+    const earthArc = document.getElementById('earthArc');
+    const earthPush = p < 0.35 ? -(p / 0.35) * 30 : -30;
+    earthArc.style.transform = `translateX(-50%) translateY(${earthPush}vh)`;
+    earthArc.style.opacity = p < 0.45 ? 1 : Math.max(0, 1 - (p - 0.45) / 0.1);
+
+    // Atmosphere band fades with Earth (0.35–0.5)
+    const atmosphereBand = document.getElementById('atmosphereBand');
+    atmosphereBand.style.opacity = p < 0.35 ? 1 : Math.max(0, 1 - (p - 0.35) / 0.15);
+
+    // Cloud layer (0.45–0.65)
+    const cloudLayer = document.getElementById('cloudLayer');
+    let cloudOp = 0;
+    if (p >= 0.45 && p <= 0.65) {
+      cloudOp = Math.sin(((p - 0.45) / 0.2) * Math.PI);
+    }
+    cloudLayer.style.opacity = cloudOp;
+    cloudLayer.style.background = `radial-gradient(ellipse at center, rgba(180,200,240,${cloudOp * 0.25}) 0%, rgba(140,165,210,${cloudOp * 0.12}) 60%, transparent 100%)`;
+
+    // Darkness layer (0.6–0.8)
+    const darknessLayer = document.getElementById('darknessLayer');
+    const darkOp = p < 0.6 ? 0 : p > 0.8 ? 1 : (p - 0.6) / 0.2;
+    darknessLayer.style.opacity = darkOp;
+
+    // Laptop reveal (0.78–0.92)
+    const laptopReveal = document.getElementById('laptopReveal');
+    const laptopOp = p < 0.78 ? 0 : p > 0.92 ? 1 : (p - 0.78) / 0.14;
+    laptopReveal.style.opacity = laptopOp;
+
+    const laptopScreen = document.getElementById('laptopScreen');
+    const scaleY = p < 0.78 ? 0.02 : p > 0.88 ? 1 : 0.02 + ((p - 0.78) / 0.1) * 0.98;
+    laptopScreen.style.transform = `scaleY(${scaleY})`;
+
+    const laptopInner = document.getElementById('laptopScreenInner');
+    const innerOp = p < 0.86 ? 0 : p > 0.92 ? 1 : (p - 0.86) / 0.06;
+    laptopInner.style.opacity = innerOp;
+
+    // Zero-gravity components (0.88–1.0)
+    const zeroG = document.getElementById('zeroGComponents');
+    const zeroOp = p < 0.88 ? 0 : (p - 0.88) / 0.12;
+    zeroG.style.opacity = zeroOp;
+
+    // Animate individual components drifting apart
+    if (p > 0.88) {
+      const drift = (p - 0.88) / 0.12;
+      const items = document.querySelectorAll('.zero-g-item');
+      items.forEach((item, i) => {
+        const angle = (i / items.length) * Math.PI * 2;
+        const distance = drift * 24;
+        item.style.transform = `translate(${Math.cos(angle) * distance}px, ${Math.sin(angle) * distance * 0.5}px)`;
+      });
+    }
+
+    // Hero content timed fades
+    animateHeroContent(p);
   }
-}
 
-loadProjects();
-</script>
+  function animateHeroContent(p) {
+    const overline = document.getElementById('heroOverline');
+    const headline = document.getElementById('heroHeadline');
+    const sub = document.getElementById('heroSub');
+    const cta = document.getElementById('heroCTA');
+    const scrollInd = document.getElementById('scrollIndicator');
+
+    // Overline: appears at 12%, exits at 55%
+    overline.style.opacity = p < 0.12 ? 0 : p > 0.55 ? 0 : Math.min(1, (p - 0.12) / 0.08);
+    overline.style.transform = `translateY(${p < 0.12 ? 8 : 0}px)`;
+
+    // Headline: appears at 15%, exits at 60%
+    headline.style.opacity = p < 0.15 ? 0 : p > 0.60 ? 0 : Math.min(1, (p - 0.15) / 0.08);
+    headline.style.transform = `translateY(${p < 0.15 ? 16 : 0}px)`;
+
+    // Sub: appears at 28%, exits at 65%
+    sub.style.opacity = p < 0.28 ? 0 : p > 0.65 ? 0 : Math.min(1, (p - 0.28) / 0.08);
+    sub.style.transform = `translateY(${p < 0.28 ? 12 : 0}px)`;
+
+    // CTA: appears at 40%, exits at 68%
+    cta.style.opacity = p < 0.40 ? 0 : p > 0.68 ? 0 : Math.min(1, (p - 0.40) / 0.08);
+    cta.style.transform = `translateY(${p < 0.40 ? 12 : 0}px)`;
+
+    // Scroll indicator: visible 2–12%, exits at 15%
+    scrollInd.style.opacity = p < 0.02 ? 0 : p > 0.12 ? 0 : Math.min(1, (p - 0.02) / 0.04);
+  }
+
+  // Nav appears after 5% scroll
+  const nav = document.getElementById('siteNav');
+  ScrollTrigger.create({
+    trigger: 'body',
+    start: 'top+=5% top',
+    onEnter: () => nav.classList.add('visible'),
+    onLeaveBack: () => nav.classList.remove('visible')
+  });
+
+  // ── Effect 2 — Interconnected section transitions ─────────────
+  // Each section bleeds into the next via overlapping scroll ranges
+
+  // Pipeline section entry — overlaps with hero exit
+  gsap.timeline({
+    scrollTrigger: {
+      trigger: '.section-pipeline',
+      start: 'top 85%',
+      end: 'top 20%',
+      scrub: true
+    }
+  })
+  .from('.section-pipeline', { opacity: 0, y: 40 }, 0);
+
+  // Background color morph between sections
+  gsap.to('body', {
+    backgroundColor: '#07070F',
+    scrollTrigger: {
+      trigger: '.section-pipeline',
+      start: 'top 60%',
+      end: 'top top',
+      scrub: true
+    }
+  });
+
+  gsap.to('body', {
+    backgroundColor: '#04040A',
+    scrollTrigger: {
+      trigger: '.section-portfolio',
+      start: 'top 60%',
+      end: 'top top',
+      scrub: true
+    }
+  });
+
+  gsap.to('body', {
+    backgroundColor: '#07070F',
+    scrollTrigger: {
+      trigger: '.section-capabilities',
+      start: 'top 60%',
+      end: 'top top',
+      scrub: true
+    }
+  });
+
+  gsap.to('body', {
+    backgroundColor: '#0C0C1E',
+    scrollTrigger: {
+      trigger: '.section-signal',
+      start: 'top 60%',
+      end: 'top top',
+      scrub: true
+    }
+  });
+
+  gsap.to('body', {
+    backgroundColor: '#04040A',
+    scrollTrigger: {
+      trigger: '.section-cta',
+      start: 'top 60%',
+      end: 'top top',
+      scrub: true
+    }
+  });
+
+  // Section tags animate in
+  gsap.utils.toArray('.section-tag').forEach(tag => {
+    gsap.from(tag, {
+      opacity: 0,
+      y: 8,
+      duration: 0.8,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: tag,
+        start: 'top 90%',
+        toggleActions: 'play none none reverse'
+      }
+    });
+  });
+
+  // CTA overline
+  ScrollTrigger.create({
+    trigger: '#ctaOverline',
+    start: 'top 90%',
+    onEnter: () => {
+      gsap.to('#ctaOverline', { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' });
+    }
+  });
+
+  // Pipeline cards stagger
+  gsap.utils.toArray('.pipeline-card').forEach((card, i) => {
+    gsap.to(card, {
+      opacity: 1,
+      y: 0,
+      duration: 0.7,
+      ease: 'power3.out',
+      delay: i * 0.08,
+      scrollTrigger: {
+        trigger: card,
+        start: 'top 88%',
+        toggleActions: 'play none none reverse'
+      }
+    });
+  });
+
+  // Capability cards stagger
+  gsap.utils.toArray('.cap-card').forEach((card, i) => {
+    gsap.to(card, {
+      opacity: 1,
+      y: 0,
+      duration: 0.7,
+      ease: 'power3.out',
+      delay: i * 0.07,
+      scrollTrigger: {
+        trigger: card,
+        start: 'top 88%',
+        toggleActions: 'play none none reverse'
+      }
+    });
+  });
+
+  // ── Effect 3 — Cursor dissolve text ──────────────────────────
+  function initCursorDissolve(selector) {
+    const el = document.querySelector(selector);
+    if (!el) return;
+
+    const split = new SplitText(el, { type: 'chars', charsClass: 'dissolve-char' });
+
+    document.addEventListener('mousemove', e => {
+      const mx = e.clientX;
+      const my = e.clientY;
+
+      split.chars.forEach(char => {
+        const cr = char.getBoundingClientRect();
+        const cx = cr.left + cr.width / 2;
+        const cy = cr.top + cr.height / 2;
+        const dist = Math.hypot(mx - cx, my - cy);
+        const radius = 120;
+
+        if (dist < radius) {
+          const force = (1 - dist / radius) * 30;
+          const angle = Math.atan2(cy - my, cx - mx);
+          gsap.to(char, {
+            x: Math.cos(angle) * force,
+            y: Math.sin(angle) * force,
+            opacity: 0.3 + (dist / radius) * 0.7,
+            duration: 0.3,
+            ease: 'power2.out',
+            overwrite: true
+          });
+        } else {
+          gsap.to(char, {
+            x: 0, y: 0, opacity: 1,
+            duration: 0.6,
+            ease: 'elastic.out(1, 0.5)',
+            overwrite: true
+          });
+        }
+      });
+    });
+  }
+
+  // Apply cursor dissolve to main headline + section headlines + CTA headline
+  initCursorDissolve('#heroHeadline');
+  initCursorDissolve('#pipelineHeadline');
+  initCursorDissolve('#portfolioHeadline');
+  initCursorDissolve('#capabilitiesHeadline');
+  initCursorDissolve('#signalHeadline');
+  initCursorDissolve('#ctaHeadline');
+
+  // ── Effect 4 — SplitText scroll reveals ──────────────────────
+  document.querySelectorAll('[data-reveal]').forEach(el => {
+    const type = el.dataset.reveal || 'words';
+    const split = new SplitText(el, { type, linesClass: 'line' });
+    const targets = type === 'chars' ? split.chars
+                  : type === 'words' ? split.words
+                  : split.lines;
+
+    gsap.from(targets, {
+      opacity: 0,
+      filter: 'blur(20px)',
+      y: 20,
+      duration: 1,
+      stagger: 0.04,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: el,
+        start: 'top 85%',
+        toggleActions: 'play none none reverse'
+      }
+    });
+  });
+
+  // ── Effect 6 — CSS Mask reveals on portfolio cards ────────────
+  // Applied after cards are rendered (see fetchPortfolio)
+  function applyMaskReveal(card) {
+    gsap.to(card, {
+      maskPosition: '0% 100%',
+      opacity: 1,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: card,
+        start: 'top 90%',
+        end: 'top 10%',
+        scrub: true
+      }
+    });
+  }
+
+  // ── Portfolio feed ────────────────────────────────────────────
+  async function fetchPortfolio() {
+    const grid = document.getElementById('portfolioGrid');
+
+    try {
+      const res = await fetch('/projects/feed.json', { cache: 'no-store' });
+      if (!res.ok) throw new Error('feed not found');
+      const projects = await res.json();
+
+      if (!projects.length) throw new Error('empty');
+
+      projects.forEach(p => {
+        const card = document.createElement('article');
+        card.className = 'portfolio-card';
+        card.setAttribute('role', 'listitem');
+        card.innerHTML = `
+          <div class="portfolio-card-accent" style="background:${p.palette_accent || '#4A9EFF'}"></div>
+          <div class="portfolio-card-name">${escHtml(p.brand_name)}</div>
+          <div class="portfolio-card-category">${escHtml(p.category)}</div>
+          <a href="${escHtml(p.deploy_url)}" class="portfolio-card-link" target="_blank" rel="noopener">
+            View live site
+          </a>
+        `;
+        grid.appendChild(card);
+        applyMaskReveal(card);
+      });
+
+    } catch {
+      const empty = document.createElement('div');
+      empty.className = 'portfolio-empty';
+      empty.innerHTML = `
+        <div class="portfolio-empty-headline">First production launching soon</div>
+        <div class="portfolio-empty-sub">Pipeline running<span class="loading-dots"></span></div>
+      `;
+      grid.appendChild(empty);
+
+      gsap.to(empty, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: empty,
+          start: 'top 85%',
+          toggleActions: 'play none none reverse'
+        }
+      });
+    }
+  }
+
+  function escHtml(str) {
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  fetchPortfolio();
+
+  // ── CTA form handler ─────────────────────────────────────────
+  function handleCtaSubmit(e) {
+    e.preventDefault();
+    const input = document.getElementById('ctaInput');
+    const val = input.value.trim();
+    if (!val) return;
+
+    // Visual feedback
+    const btn = e.target.querySelector('.cta-submit');
+    btn.textContent = 'Queued';
+    btn.style.background = 'rgba(74,158,255,0.2)';
+    btn.style.color = 'var(--accent)';
+    input.value = '';
+    input.placeholder = 'Build queued — pipeline will run at next cycle.';
+    setTimeout(() => {
+      btn.textContent = 'Send';
+      btn.style.background = '';
+      btn.style.color = '';
+      input.placeholder = 'What should we build?';
+    }, 4000);
+  }
+
+  // ── Animate stats on scroll entry ────────────────────────────
+  document.querySelectorAll('.stat-value').forEach(el => {
+    gsap.from(el, {
+      opacity: 0,
+      x: -20,
+      duration: 0.9,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: el,
+        start: 'top 88%',
+        toggleActions: 'play none none reverse'
+      }
+    });
+  });
+
+  // Signal body text reveal
+  gsap.from('.signal-body', {
+    opacity: 0,
+    y: 20,
+    duration: 0.8,
+    ease: 'power3.out',
+    scrollTrigger: {
+      trigger: '.signal-body',
+      start: 'top 85%',
+      toggleActions: 'play none none reverse'
+    }
+  });
+
+  gsap.from('.signal-right .btn-primary', {
+    opacity: 0,
+    y: 16,
+    duration: 0.8,
+    delay: 0.2,
+    ease: 'power3.out',
+    scrollTrigger: {
+      trigger: '.signal-right .btn-primary',
+      start: 'top 88%',
+      toggleActions: 'play none none reverse'
+    }
+  });
+
+  // ── Initial load animation ────────────────────────────────────
+  // Trigger the CSS descent scene immediately at page load
+  animateSpaceScene(0);
+
+  // Small scroll indicator appears after 1.5s on load
+  setTimeout(() => {
+    const ind = document.getElementById('scrollIndicator');
+    // Only show if user hasn't scrolled yet
+    if (window.scrollY < 50) {
+      gsap.to(ind, { opacity: 1, duration: 0.8, ease: 'power2.out' });
+    }
+  }, 1500);
+
+  /* ─────────────────────────────────────────
+     Author: Ertugrul Eren Durak
+     Website: https://www.ertugrulerendurak.com/
+     ───────────────────────────────────────── */
+  </script>
 </body>
 </html>

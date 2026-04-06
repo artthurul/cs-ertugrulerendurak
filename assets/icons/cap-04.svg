@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- AI Image & Video Generation: frame with play triangle -->
+  <rect x="4" y="7" width="24" height="18" rx="1.5" stroke="#4A9EFF" stroke-width="0.8"/>
+  <polygon points="13,12 13,20 21,16" stroke="#4A9EFF" stroke-width="0.8" stroke-linejoin="round"/>
+  <line x1="10" y1="27" x2="22" y2="27" stroke="#4A9EFF" stroke-width="0.8" stroke-linecap="round"/>
+</svg>
