@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none">
+  <!-- SEO, Security & Deployment: shield with upward launch arrow -->
+  <path d="M16 4 L26 8 L26 18 C26 23 21 27 16 29 C11 27 6 23 6 18 L6 8 Z"
+        stroke="#4A9EFF" stroke-width="0.8" stroke-linejoin="round"/>
+  <line x1="16" y1="21" x2="16" y2="13" stroke="#4A9EFF" stroke-width="0.8"/>
+  <polyline points="12,16 16,12 20,16" stroke="#4A9EFF" stroke-width="0.8" stroke-linejoin="round"/>
+</svg>

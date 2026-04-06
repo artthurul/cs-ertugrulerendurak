@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 48" width="180" height="48" fill="none">
+  <title>Nullpoint</title>
+
+  <!-- Symbol: coordinate origin — two axis lines crossing at (0,0) with hollow circle -->
+  <line x1="18" y1="10" x2="18" y2="38" stroke="#4A9EFF" stroke-width="1"/>
+  <line x1="6"  y1="24" x2="30" y2="24" stroke="#4A9EFF" stroke-width="1"/>
+  <circle cx="18" cy="24" r="3.5" stroke="#4A9EFF" stroke-width="1" fill="#04040A"/>
+  <circle cx="18" cy="10" r="1" fill="#4A9EFF"/>
+  <circle cx="30" cy="24" r="1" fill="#4A9EFF"/>
+
+  <!-- Wordmark: NULLPOINT -->
+  <text
+    x="40"
+    y="30"
+    font-family="'Space Grotesk', 'Inter', sans-serif"
+    font-size="16"
+    font-weight="600"
+    letter-spacing="3"
+    fill="#F2F4FF"
+  >NULLPOINT</text>
+</svg>

@@ -1,0 +1,4 @@
+Contact: https://www.ertugrulerendurak.com/
+Preferred-Languages: en, tr
+Canonical: https://cs.ertugrulerendurak.com/projects/nullpoint/.well-known/security.txt
+Policy: https://www.ertugrulerendurak.com/security-policy

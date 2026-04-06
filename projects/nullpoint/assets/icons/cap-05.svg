@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none">
+  <!-- Full-Stack Frontend Engineering: angle brackets with a horizontal rule -->
+  <polyline points="10,11 5,16 10,21" stroke="#4A9EFF" stroke-width="0.8" stroke-linejoin="round"/>
+  <polyline points="22,11 27,16 22,21" stroke="#4A9EFF" stroke-width="0.8" stroke-linejoin="round"/>
+  <line x1="14" y1="22" x2="18" y2="10" stroke="#4A9EFF" stroke-width="0.8"/>
+</svg>
